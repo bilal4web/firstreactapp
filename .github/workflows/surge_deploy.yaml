@@ -6,7 +6,7 @@ name: Deploy React App
 # events but only for the master branch
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,6 +37,6 @@ jobs:
       run: npm install -global surge
       
     - name: Deplot to Surge
-      run: surge ./build bilalahmad_reactapp.surge.su --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./ bilalahmad_reactapp2022.surge.su --token ${{ secrets.SURGE_TOKEN }}
 
 
