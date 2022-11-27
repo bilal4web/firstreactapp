@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 
 function Reddit() {
   const [posts, setPosts] = useState([]);
 
-React.useEffect(() => {
+useEffect(() => {
   axios.get(`https://www.reddit.com/r/reactjs.json`)
     .then(res => {
       const newPosts = res.data.data.children
